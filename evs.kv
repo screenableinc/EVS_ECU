@@ -1,0 +1,278 @@
+<screenManager>:
+    LoginScreen:
+    MainScreen:
+
+
+#<Submitting>:
+#    name:"submitting"
+#    canvas.before:
+#        Color:
+#            rgba:0,0,0,.75
+#        Rectangle:
+#            size: self.parent.size
+#            pos:self.parent.pos
+#    Loading_gif:
+
+<LoginScreen>:
+    name:"login"
+
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos:self.pos
+            source:"./dependencies/bg2.jpg"
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba:0,0,0,.75
+            Rectangle:
+                size: self.parent.size
+                pos:self.parent.pos
+#    RelativeLayout:
+#
+
+
+
+
+    BoxLayout:
+#        size_hint:None,None
+#        size:self.children[3].width,500
+#        canvas.before:
+#            Color:
+#                rgba:1,0,0,.75
+#            Rectangle:
+#                size: self.parent.size
+#                pos:self.parent.pos
+
+        orientation:"vertical"
+        BoxLayout:
+
+
+        BoxLayout:
+            orientation:"vertical"
+
+
+            Label:
+                text: "WELCOME, PLEASE LOGIN"
+                font_size: "40px"
+                size_hint_y:None
+                pos_hint:{'center_x':.5, 'center_y':.5}
+
+
+            TextInput:
+                size_hint_x:None
+                size_hint_y:None
+                id:student_id
+                width:"200dp"
+                height:40
+                pos_hint:{'center_x':.5, 'center_y':.5}
+                spacing:15
+                hint_text:"Student ID"
+            TextInput:
+                size_hint_x:None
+                size_hint_y:None
+                width:"200dp"
+                height:40
+                pos_hint:{'center_x':.5, 'center_y':.5}
+                id:password
+                password:True
+
+                hint_text:"Password"
+
+            LoginButton:
+
+                source: './dependencies/login.png'
+                allow_stretch:True
+                keep_ratio:False
+                size_hint:None, None
+                pos_hint:{'center_x':.5, 'center_y':.5}
+                width: "160dp"
+                height:40
+
+            FloatLayout:
+                size_hint_y:None
+                height:40
+                id:err
+
+        BoxLayout:
+
+#
+#            Image:
+#                source:"./dependencies/loader.gif"
+#                keep_data:True
+#                anim_delay:0.05
+
+
+
+<MainScreen>:
+    name:"main"
+
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos:self.pos
+            source:"./dependencies/home1.jpg"
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba:0,0,0,.5
+            Rectangle:
+                size: self.size
+                pos:self.pos
+
+
+
+
+
+
+
+<ErrBady>:
+    orientation:"vertical"
+
+    BoxLayout:
+        size_hint_y:None
+        height:60
+        Label:
+
+            font_size:"40px"
+            text:"President"
+
+    BoxLayout:
+        size:self.size
+
+        orientation:"horizontal"
+
+#
+        RelativeLayout:
+            size_hint_x:.35
+
+
+            BoxLayout:
+                orientation:"vertical"
+                size_hint:None ,None
+                pos_hint:{'center_x':.5,'center_y':.5}
+
+                width:300
+                height:450
+
+                canvas.before:
+                    Color:
+                        rgba:0,0,0,.75
+                    Rectangle:
+                        size: self.size
+                        pos:self.pos
+
+                CandidateImage:
+                    size_hint:None ,None
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    party:"ud"
+
+                    width:self.parent.width
+                    height:430
+                    cand_id:"ud_candidate"
+                    path:''
+                    source:self.path
+                    on_source:source=self.path
+                Label:
+                    size_hint_y:None
+                    height:20
+                    text: "Candidate name"
+
+        RelativeLayout:
+            size_hint_x:.35
+
+            BoxLayout:
+                orientation:"vertical"
+                size_hint:None ,None
+                pos_hint:{'center_x':.5,'center_y':.5}
+
+                width:300
+                height:450
+
+                canvas.before:
+                    Color:
+                        rgba:0,0,0,.75
+                    Rectangle:
+                        size: self.size
+                        pos:self.pos
+
+                CandidateImage:
+                    size_hint:None ,None
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    party:"ur"
+                    width:self.parent.width
+                    height:430
+                    cand_id:"ur_candidate"
+                    path:''
+                    source:self.path
+                    on_source:source=self.path
+
+                Label:
+                    size_hint_y:None
+                    height:20
+
+                    text: "Candidate name"
+
+
+#        Image:
+#            source: './dependencies/next.png'
+#            allow_stretch:True
+#            keep_ratio:False
+#            size_hint:None, None
+#            pos_hint:{'center_x':.5,'center_y':.5}
+#            width: "160dp"
+#            height:40
+        RelativeLayout:
+            size_hint_x:.3
+
+
+            BoxLayout:
+                orientation:"vertical"
+
+                pos_hint:{'center_x':.5,'center_y':.5}
+
+
+                canvas.before:
+                    Color:
+                        rgba:0,0,0,.75
+                    Rectangle:
+                        size: self.size
+                        pos:self.pos
+
+
+    BoxLayout:
+        size_hint_y:None
+        height:20
+
+
+<Loading_gif>:
+    pos_hint:{'center_x':.5,'center_y':.5}
+    id:loading
+    canvas.before:
+        Color:
+            rgba:0,0,0,.697
+        Rectangle:
+            size: self.size
+            pos:self.pos
+    Image:
+        source:"./dependencies/loader.gif"
+        keep_data:True
+        anim_delay:0.05
+        alpha:.697
+
+<CandidateImage>:
+
+    size_hint_y:.7
+
+
+<Submitting>:
+    pos_hint:{'center_x':.5,'center_y':.5}
+
+    canvas.before:
+        Color:
+            rgba:0,0,0,.797
+        Rectangle:
+            size: self.parent.size
+            pos:self.parent.pos
+
+
